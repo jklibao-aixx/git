@@ -140,6 +140,7 @@ function buildMessages(userContent) {
   const messages = [{ role: 'system', content: settings.systemPrompt }];
   const recentHistory = chatHistory.slice(-10);
   for (const msg of recentHistory) {
+    if (msg.role === 'error' || msg.role === 'system') continue;
     messages.push({ role: msg.role, content: msg.content });
   }
   messages.push({ role: 'user', content: userContent });
