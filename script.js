@@ -190,11 +190,12 @@ function renderApp() {
                   <div class="segmented" aria-label="Model selector">
                     <button class="${settings.model.includes('gpt') ? 'active' : ''}" type="button" data-model="gpt-4o">GPT-4o</button>
                     <button class="${settings.model.includes('claude') ? 'active' : ''}" type="button" data-model="claude-3-5-sonnet-20240620">Claude</button>
-                    <button class="settings-model-custom" type="button" title="自定义模型">自定义</button>
+                    <button class="${settings.model.includes('deepseek') ? 'active' : ''}" type="button" data-model="deepseek-v4-pro">DeepSeek</button>
                   </div>
                   <p class="form-hint" style="margin-top:8px;">
                     当前模型：<code>${settings.model}</code>
                   </p>
+                  <p class="form-hint">提示：根据你的 API 地址选择对应的模型。DeepSeek 仅支持 deepseek-v4-pro / deepseek-v4-flash。</p>
                 </div>
 
                 <div class="panel-section">
